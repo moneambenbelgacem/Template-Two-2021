@@ -1,0 +1,137 @@
+/* Start Variables  */
+:root {
+  --main-color: #02bced;
+}
+/* End Variables  */
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small screens */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Medium Screen */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(51, 50, 50);
+}
+ul {
+  list-style: none;
+}
+
+/* Start Header  */
+
+header .container .logo img {
+  width: 55px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  min-height: 151px;
+}
+header .container::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background-color: #636364;
+  width: calc(100% - 30px);
+  bottom: 48px;
+  left: 15px;
+  z-index: -1;
+}
+header .container nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+header .container nav ul {
+  display: flex;
+}
+header .container nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+}
+header .container nav .form {
+  display: flex;
+  width: 45px;
+  height: 30px;
+  align-items: center;
+  position: relative;
+  border-left: 1px solid white;
+}
+header .container nav .form i {
+  color: white;
+  position: absolute;
+  right: 0;
+}
+header .container nav ul .active,
+header .container nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+header .container nav ul li a {
+  margin-left: 15px;
+}
+.toggle {
+  color: white;
+  font-size: 25px;
+}
+
+@media (min-width: 767px) {
+  header .container nav .toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  header .container nav {
+    justify-content: space-between;
+  }
+  header .container nav ul {
+    display: none;
+  }
+  header .container nav .toggle:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+  }
+  header .container nav .toggle:hover + ul li a {
+    display: block;
+    padding: 15px;
+  }
+}
+
+/* End Header  */
