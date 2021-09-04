@@ -1,6 +1,8 @@
 /* Start Variables  */
 :root {
   --main-color: #02bced;
+  --space-top: 30px;
+  --space-bottom: 30px;
 }
 /* End Variables  */
 
@@ -8,6 +10,8 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 .container {
   margin-left: auto;
@@ -39,14 +43,19 @@ html {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: rgb(51, 50, 50);
 }
 ul {
   list-style: none;
 }
 
 /* Start Header  */
-
+header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
 header .container .logo img {
   width: 55px;
 }
@@ -55,7 +64,6 @@ header .container {
   align-items: center;
   position: relative;
   justify-content: space-between;
-  min-height: 151px;
 }
 header .container::after {
   content: '';
@@ -63,23 +71,28 @@ header .container::after {
   height: 1px;
   background-color: #636364;
   width: calc(100% - 30px);
-  bottom: 48px;
+  bottom: 5px;
   left: 15px;
   z-index: -1;
 }
+
 header .container nav {
   display: flex;
   align-items: center;
   flex: 1;
   justify-content: flex-end;
+  min-height: 49px;
 }
 header .container nav ul {
   display: flex;
 }
 header .container nav ul li a {
+  display: block;
   text-decoration: none;
   color: white;
   padding: 15px;
+  transition: 0.3;
+  position: relative;
 }
 header .container nav .form {
   display: flex;
@@ -123,6 +136,7 @@ header .container nav ul li a {
   header .container nav .toggle:hover + ul {
     display: flex;
     flex-direction: column;
+    background-color: #00000070;
     position: absolute;
     top: 100%;
     width: 100%;
@@ -133,5 +147,241 @@ header .container nav ul li a {
     padding: 15px;
   }
 }
+/* End Header */
+/* Start landing */
+.landing {
+  position: relative;
+  background-image: url('/images/parallel-world_3840x2160.jpg');
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
 
-/* End Header  */
+.landing .text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 50%;
+  background-color: #42afcf6e;
+}
+.landing .text .content {
+  padding: 20px 60px;
+}
+.landing .text .content h2 {
+  margin-bottom: 20px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: white;
+}
+.landing .text .content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+}
+
+.change-bg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 25px;
+}
+.fa-angle-left {
+  position: absolute;
+  left: 30px;
+}
+.fa-angle-right {
+  position: absolute;
+  right: 30px;
+}
+.circles {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: flex;
+  transform: translateX(-50%);
+}
+.circles li {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.circles .active {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: #0000000f;
+}
+@media (max-width: 767px) {
+  .landing .text {
+    width: 100%;
+  }
+  .change-bg {
+    display: none;
+  }
+  .landing .text .content {
+    width: 100%;
+  }
+}
+/* End landing */
+/* Start Component */
+.main-heading {
+  padding: 25px 30px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.main-heading .text {
+  width: 50%;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .main-heading .text {
+    width: 100%;
+  }
+}
+.main-heading .text h2 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.main-heading .text p {
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 35px;
+}
+.main-heading .text h2::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 90px;
+  background-color: black;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 56px;
+}
+.main-heading .text h2::after {
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 51px;
+  background-color: white;
+}
+/* End Component */
+/* Start Services */
+.services {
+  margin-top: var(--space-top);
+  margin-bottom: var(--space-bottom);
+}
+.services .services-contain {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.services .services-contain .srv-box {
+  text-align: center;
+  padding: 25px 0;
+}
+.services .services-contain .srv-box i {
+  margin-bottom: 20px;
+}
+.services .services-contain .srv-box .text h3 {
+  color: #47d2fa;
+  margin-bottom: 15px;
+}
+.services .services-contain .text p {
+  color: #777;
+  line-height: 1.5;
+}
+.services .services-contain .text {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .services .services-contain {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-row-gap: 20px;
+    grid-column-gap: 40px;
+  }
+  .services .services-contain .srv-box {
+    display: flex;
+    padding: 20px;
+  }
+  .services .services-contain .srv-box i {
+    margin-right: 15px;
+  }
+  .services .services-contain .text {
+    text-align: left;
+  }
+}
+/* End Services */
+/* Start Design */
+.design {
+  margin-top: var(--space-top);
+  margin-bottom: var(--space-bottom);
+  background-image: url('/images/besign-bg.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  height: 400px;
+  overflow: hidden;
+}
+.design::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: #0000000f;
+}
+.design .image,
+.design .text {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+.design .image img {
+  position: relative;
+  top: 88px;
+}
+.design .text {
+  padding: 40px;
+  background-color: #42afcf6e;
+}
+.design .text h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.design .text ul li {
+  padding: 5px 0;
+}
+.design .text ul li::before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f108';
+  font-weight: 900;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+@media (max-width: 768px) {
+  .design .image {
+    display: none;
+  }
+}
+
+/* End Design */
