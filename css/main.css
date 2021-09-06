@@ -383,5 +383,133 @@ header .container nav ul li a {
     display: none;
   }
 }
-
 /* End Design */
+
+/* Start Portfolio */
+.portfolio {
+  margin-top: var(--space-top);
+  margin-bottom: var(--space-bottom);
+}
+.portfolio .container .links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.portfolio .container .links li {
+  padding: 10px;
+}
+.portfolio .container .links li.active {
+  background-color: var(--main-color);
+}
+.portfolio .container .links li:hover {
+  background-color: var(--main-color);
+}
+.portfolio .imgs-contain {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.portfolio .imgs-contain .box {
+  position: relative;
+}
+.portfolio .imgs-contain .box img {
+  max-width: 100%;
+  transition: 0.3s;
+}
+@media (min-width: 768px) {
+  .portfolio .imgs-contain .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1199px) {
+  .portfolio .imgs-contain .box {
+    flex-basis: 25%;
+  }
+}
+.portfolio .imgs-contain .box .caption {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  bottom: -100%;
+  transition: 0.3s;
+}
+.portfolio .imgs-contain .box:hover .caption {
+  bottom: 0;
+}
+.portfolio .imgs-contain .box:hover img {
+  transform: rotate(3deg) scale(1.1);
+}
+.portfolio .more {
+  background-color: var(--main-color);
+  display: block;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 20px auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+/* End portfolio */
+/* Start Video */
+.video {
+  position: relative;
+}
+.video::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 99.7%;
+  top: 0;
+  left: 0;
+  background-color: #00000042;
+}
+.video video {
+  width: 100%;
+}
+.video .text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  background-color: #42afcf6e;
+  text-align: center;
+  padding: 20px;
+}
+.video .text h4 {
+  text-transform: uppercase;
+  color: white;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.video .text p {
+  margin-bottom: 15px;
+  color: white;
+}
+.video .text .btn {
+  display: block;
+  background-color: #00000080;
+  width: fit-content;
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 auto;
+  color: white;
+}
+/* End Video */
+/* Start About */
+.about {
+  margin-top: var(--space-top);
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .about img {
+    width: 80%;
+  }
+}
+/* End About */
