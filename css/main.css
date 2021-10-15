@@ -151,7 +151,7 @@ header .container nav ul li a {
 /* Start landing */
 .landing {
   position: relative;
-  background-image: url('/images/parallel-world_3840x2160.jpg');
+  background-image: url('../images/parallel-world_3840x2160.jpg');
   background-size: cover;
   width: 100%;
   min-height: 100vh;
@@ -332,7 +332,7 @@ header .container nav ul li a {
 .design {
   margin-top: var(--space-top);
   margin-bottom: var(--space-bottom);
-  background-image: url('/images/besign-bg.jpg');
+  background-image: url('../images/besign-bg.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -517,7 +517,7 @@ header .container nav ul li a {
 .stats {
   padding-top: var(--space-top);
   padding-bottom: var(--space-bottom);
-  background-image: url('/images/stats.jpg');
+  background-image: url('../images/stats.jpg');
   background-size: cover;
   position: relative;
   text-align: center;
@@ -688,7 +688,7 @@ header .container nav ul li a {
 .quote {
   padding-top: var(--space-top);
   padding-bottom: var(--space-bottom);
-  background-image: url('/images/quote.jpg');
+  background-image: url('../images/quote.jpg');
   background-size: cover;
   text-align: center;
   position: relative;
@@ -729,6 +729,8 @@ header .container nav ul li a {
 /* End Quote */
 /* Start pricing */
 .pricing {
+  padding-top: var(--space-top);
+  padding-bottom: var(--space-bottom);
 }
 .pricing .container .plans {
   display: grid;
@@ -766,4 +768,232 @@ header .container nav ul li a {
   font-size: 15px;
   margin-left: 20px;
 }
+
+.pricing .container .plans .plan ul {
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .container .plans .plan ul li {
+  padding: 20px;
+  position: relative;
+}
+.pricing .container .plans .plan ul li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 140px;
+  background-color: var(--main-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pricing .container .plans .plan .foot a {
+  display: block;
+  margin: 20px auto;
+  text-decoration: none;
+  color: black;
+  border: 1px solid var(--main-color);
+  width: fit-content;
+  padding: 15px 35px;
+}
+.pricing .container .contact-text {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 18px;
+}
+.pricing .container .contact-link {
+  display: block;
+  text-decoration: none;
+  margin: 15px auto;
+  text-align: center;
+  background-color: var(--main-color);
+  width: fit-content;
+  color: white;
+  padding: 10px 30px;
+}
 /* End pricing */
+/* Start Sub */
+.subscribe {
+  padding-top: var(--space-top);
+  padding-bottom: var(--space-bottom);
+  background-image: url('../images/subscribe.jpg');
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+.subscribe::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0000000f;
+}
+.subscribe .container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 991px) {
+  .subscribe .container {
+    flex-direction: column;
+  }
+}
+.subscribe .container form {
+  display: flex;
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+}
+.subscribe .container form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+}
+.subscribe .container form input[type='email'] {
+  background: none;
+  padding: 15px 15px 15px 35px;
+  outline: none;
+  border: 1px solid white;
+  border-right: none;
+}
+.subscribe .container form input[type='email']::placeholder {
+  color: white;
+}
+.subscribe .container form input[type='submit'] {
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: var(--main-color);
+  border: 1px solid white;
+  border-left: none;
+  color: white;
+}
+.subscribe .container p {
+  line-height: 1.8;
+  margin-left: 15px;
+}
+/* End Sub */
+/* Start contact-us */
+.contact {
+  padding-top: var(--space-top);
+  padding-bottom: var(--space-bottom);
+}
+.contact .content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .contact .content {
+    flex-direction: column;
+  }
+}
+.contact .content form {
+  flex-basis: 70%;
+}
+.contact .content form .main-input {
+  padding: 20px;
+  display: block;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.contact .content form .main-input:focus {
+  outline: none;
+}
+.contact .content form textarea.main-input {
+  height: 200px;
+}
+.contact .content form input[type='submit'] {
+  background-color: var(--main-color);
+  color: white;
+  padding: 20px;
+  border: none;
+  display: flex;
+  margin-left: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.contact .content .info {
+  flex-basis: 25%;
+}
+@media (max-width: 767px) {
+  .contact .content .info {
+    order: -1;
+    text-align: center;
+  }
+}
+.contact .content .info h4 {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.contact .content .info .phone {
+  display: block;
+  color: #777;
+  margin-bottom: 10px;
+}
+.contact .content .info h4:nth-of-type(2) {
+  margin-top: 90px;
+}
+@media (max-width: 767px) {
+  .contact .content .info h4:nth-of-type(2) {
+    margin-top: 30px;
+  }
+}
+.contact .content .info address {
+  color: #777;
+  line-height: 2;
+}
+@media (max-width: 767px) {
+  .contact .content .info address {
+    margin-bottom: 40px;
+  }
+}
+/* End contact-us */
+/* Start Footer  */
+.footer {
+  position: relative;
+  background-image: url('/images/footer.jpg');
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000042;
+}
+
+.footer .container .logo {
+  width: 50px;
+}
+.footer .container {
+  position: relative;
+}
+.footer .container p:not(.copyright) {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer .container .social-icons i {
+  padding: 10px 15px;
+}
+.footer .container .social-icons {
+  border-top: 1px solid white;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+.footer .container .copyright {
+  padding: 0px 25px 10px;
+}
+.footer .container .copyright span {
+  color: var(--main-color);
+}
+/* End Footer  */
