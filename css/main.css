@@ -956,7 +956,7 @@ header .container nav ul li a {
 /* Start Footer  */
 .footer {
   position: relative;
-  background-image: url('/images/footer.jpg');
+  background-image: url('../images/footer.jpg');
   background-size: cover;
   text-align: center;
   color: white;
